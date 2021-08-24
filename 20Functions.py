@@ -146,6 +146,7 @@ def my_function(food):
 my_function(fruits)
 """
 
+"""
 def number(k):
     if(k > 0):
         result = k + number(k - 1)
@@ -155,3 +156,195 @@ def number(k):
     return result
 
 number(9)
+"""
+
+
+"""
+# Positional Arguments
+
+def show_info(vorname: str, nachname : str, alter : int): #datatyp hints  variabenname : datentyp
+    print(f"Dein Name ist {nachname}, {vorname} , du bist {alter} Jahre alt")
+
+show_info("Berti", "Voigts", 63)
+show_info("Sebastian", "Christoph", 35)
+show_info("Schmidt", 35, "Jürgen")
+
+# Beim Duck-Typing wird zur Laufzeit des Programms geprüft, ob ein Objekt die entsprechenden Merkmale unterstützt.
+# Dies führt wie bei allen dynamischen Typsystemen zu einer erhöhten Flexibilität, reduziert aber ebenso die Möglichkeit,
+# statisch zur Übersetzungszeit Fehler im Programm zu finden. 
+
+# Infos Type-Hints/Check:
+# https://docs.python.org/3/library/typing.html
+#"The Python runtime does not enforce function and variable type annotations.
+# They can be used by third party tools such as type checkers, IDEs, linters, etc."
+
+
+#info = show_info
+#info("Jürgen", "Voigts", 35)
+#print(type(info))
+
+# Named Arguments
+
+def show_info_2(vorname, nachname, alter):
+    print(f"Dein Name ist {vorname} {nachname}, du bist {alter} Jahre alt!")
+    
+show_info_2(nachname = "Meyer", alter = 56, vorname = "Maria")
+
+####
+# default-Parameter-Werte in der Funktion
+def show_info_3(vorname = "Jon", nachname = "Doe", alter = 999):
+    print(f"Dein Name ist {vorname} {nachname}, du bist {alter} Jahre alt!")
+
+# kein Problem
+show_info_3(alter = 12)
+show_info_3(alter = 20, nachname = "Schmidt")
+show_info_3("Hans", "Peter", 34)
+show_info_3(True, 12, "Haus")
+show_info_3(alter = "Hallo")
+show_info_3("Jürgen", "Schmidt", alter = 20) # ERST Positionale Argumente, DANN keyword arguments
+show_info_3(vorname = "Hannes", "Schmidt" , 15)
+
+
+# Regeln (keine Konvention, sondern Syntax)
+# 1 Deklaration von Funktionen
+# default arguments folgen IMMER positional aruments
+# erlaubt: def erlaubt(a, b, c = 10)
+# nicht erlaubt: def nicht_erlaubt(a = 5, b, c)
+
+#2 Aufruf von Funktionen
+# beim Funktions-Aufruf: keyword-arguments folgen IMMER positional arguments
+# erlaubt: erlaubt1(1, 2, c = 3)
+# nicht erlaubt: nicht_erlaubt1(a = 1, 2, 3)
+
+"""
+
+"""
+# Funkrionen ohne Ruckgabe-Wert
+def summe(a, b):
+    print(a+b)
+
+summe(2, 3)
+summe('hallo', 'welt')
+summe(1, True) # True fonk nicht
+
+print(summe(3, 5), 'Test') # None Test
+summe(3, 5) # 8
+
+
+def addition(x, y):
+    return x + y
+
+
+print('===========')
+print(addition(3, 9))
+
+
+result = addition(10,10) + addition(33,33)
+print('result ist', result)
+
+"""
+
+
+"""
+# Beispiel test bestanden
+def klasur_bewertung(punkte):
+    if punkte >= 90:
+        return 'du hast bestanden'
+    else:
+        return 'du hast nicht bestanden'
+
+# Iteration
+
+schulnoten = [
+    ['omer', 65],
+    ['alev', 50],
+    ['ali', 95],
+    ['kemal', 90]
+]
+
+for note in schulnoten:
+    print(note[0], klasur_bewertung(note[1]))
+
+"""
+
+"""
+# artik yil hesaplama
+# 1. yontem
+#yil = 2021
+#print(yil % 4 == 0 and (yil % 100 != 0 or yil % 400 == 0))
+
+# 2. yontem
+def artik_yil_mi(yil):
+    if (yil % 4) == 0:
+        if (yil % 100) == 0:
+            if (yil % 400) == 0:
+                return True
+            else:
+                return False
+        else:
+             return True
+    else:
+        return False
+
+sayi=0
+onceki_artik_yil=4
+aralik_toplami=0
+for yil in range(2000,2021):
+    if(artik_yil_mi(yil)):
+        aralik_toplami=yil-onceki_artik_yil+aralik_toplami
+        onceki_artik_yil=yil
+        print(yil)
+        sayi=sayi+1
+    else:
+        continue
+print("Yil sayisi:" + str(sayi) , "Ortalama artik yil araligi:" + str(round(aralik_toplami/sayi,2)))
+
+"""
+
+"""
+#Primezahlen
+
+def main():
+    n = input("Please enter a number:")
+    is_prime(n)
+
+def is_prime(a):
+    x = True 
+    for i in (2, a):
+            while x:
+               if a%i == 0:
+                   x = False
+               else:
+                   x = True
+
+
+    if x:
+        print("prime")
+    else:
+        print("not prime")
+
+main()
+
+"""
+
+
+"""
+# Collatz - Theorem
+
+steps = 0
+c0 = int(input('gib eine pozitive zahl gorser als 0 ein'))
+
+while c0 !=0:
+
+    while c0 !=1:
+        if c0 % 2 == 0:
+            c0  //= 2
+        else:
+            c0 = 3 * c0 + 1
+        steps += 1
+        print(c0)
+
+print('steps: ', steps)
+steps = 0
+c0 = int(input('gib eine pozitive zahl gorser als 0 ein'))
+"""

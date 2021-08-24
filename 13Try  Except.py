@@ -1,6 +1,15 @@
 # TRY EXCEPT
 
 """
+try:
+  print(x)
+except NameError:
+  print("Variable x is not defined")
+except:
+  print("Something else went wrong")
+"""
+
+"""
 a = 5
 b = 0
 c = a / b

@@ -90,6 +90,8 @@ print(alter)
 
 """
 
+
+"""
 x = 10
 def addition():
     global x
@@ -101,3 +103,5 @@ print(x)
 
 addition()
 print(x)
+
+"""
