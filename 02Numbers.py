@@ -43,7 +43,7 @@
 #string1 = 'test'
 #print(string1*3) #testtesttest
 
-
+"""
 r=5
 pi=3.14
 print(round(2*pi*r))#31
@@ -63,3 +63,5 @@ else:
 x=input("ad")
 
 s = input()
+
+"""

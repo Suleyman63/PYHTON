@@ -1,5 +1,26 @@
 # TRY EXCEPT
 
+import time
+
+"""
+NameError, TypeError, ZeroDivisionError, IOError, IndexError, ValueError, KeyboardInterrupt
+
+try:
+    birtakım kodlar
+except ValueError:
+    print("Yanlış değer")
+except ZeroDivisionError:
+    print("Sıfıra bölme hatası")
+except:
+    print("Beklenmeyen bir hata oluştu!")
+
+
+giriş = input("Merhaba! Adın ne? ")
+if len(giriş) == 0:
+    raise AssertionError("İsim bölümü boş.")
+print("Hoşgeldiniz.")
+"""
+
 """
 try:
   print(x)
@@ -7,6 +28,15 @@ except NameError:
   print("Variable x is not defined")
 except:
   print("Something else went wrong")
+
+
+bölünen = int(input("bölünecek sayı: "))
+
+if bölünen == 23:
+    raise Exception("Bu programda 23 sayısını görmek istemiyorum!")
+
+bölen = int(input("bölen sayı: "))
+print(bölünen/bölen)
 """
 
 """
@@ -67,4 +97,58 @@ try:
 except ZeroDivisionError as err:
     print('Handling run-time error:', err)
     
+"""
+
+
+"""
+try:
+    zahl1 = int(input('zahl eingeben'))
+except ValueError:
+    print('eingabe muss int sein')
+except:
+    print('excep fehler')
+"""
+
+"""
+def division(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        print('division error')
+    except TypeError:
+        print('type err')
+    except:
+        print('das klappt nicht')
+print(division(0, 2))
+
+"""
+
+"""
+try:
+    print(2 / 'Haus')
+except Exception as e:
+        print('ein fehler')
+        if e.__class__ == ZeroDivisionError:
+            print('hier wurde durch 0 geteilet')
+        else:
+            print('andere fehler')
+"""
+
+
+"""
+
+count = 0
+
+if __name__ == '_main_':
+    try:
+        while count < 10:
+            print(count)
+            count += 1
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print('abgebrochen')
+    finally:
+        print('ich raume auf')
+        #f.close() finnallyde f.close eklemek gerekir
+
 """
