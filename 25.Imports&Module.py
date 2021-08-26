@@ -1,7 +1,7 @@
 # IMPORT & MODULE
 
-# FILES (OPEN; WRITE)
-# TRY/EXCEPT
+
+
 
 import random
 
