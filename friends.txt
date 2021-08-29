@@ -1,0 +1,4 @@
+canan, tatli, 24
+hakki, ekiz, 34
+celal, gullu, 44
+yasar, kevser, 32

@@ -16,9 +16,6 @@ def is_prime(zahl):
         return 'Except'
 
 
-
-
-
 def is_collatz(number):
     try:
         if number % 2 == 0:       

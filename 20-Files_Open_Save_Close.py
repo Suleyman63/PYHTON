@@ -4,7 +4,26 @@
 # enorm wichtig in pyhton: datein offnen und wieder schlissen 
 
 # READ
-f = open('data.txt', 'r')
+
+
+cources = ['pyhton', 'java', 'c++', 'javascript', 'ruby']
+
+with open('yeni.txt', 'w') as f:
+   for c in cources:
+       f.write(f'{c}\n')
+
+
+with open('yeni.txt', 'r') as f:
+    file = f.readlines()
+    file = [element.strip('\n') for element in file if '\n' in element] #ters silas n i kaldirdik
+    print(file)
+
+# usteki yeni,txt dosyasinin kopyasini olusturduk
+with open('yeni2.txt', 'w') as file2:
+    for line in file:
+        file2.write(line)
+
+#f = open('data.txt', 'r')
 
 #inhalt = f.read()
 #print(inhalt) #  alex, emily, hans
@@ -62,3 +81,6 @@ with open('inventar.txt', 'w') as f:
      for i in inv:
          f.write(i + ', ')
 """
+
+
+

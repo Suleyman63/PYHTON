@@ -42,7 +42,4 @@ else:
     print('falsch zahl')
 
 
-    with open("data.txt", "w") as f: 
-        f.write(jahr)
-        f.write(prime)
-        f.write(collatz)
+

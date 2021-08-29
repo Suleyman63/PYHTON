@@ -20,6 +20,7 @@ print(stuff[1])
 """
 
 
+
 """
 # Operation mit Tuple
 

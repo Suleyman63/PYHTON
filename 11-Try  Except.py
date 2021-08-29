@@ -1,9 +1,12 @@
 # TRY EXCEPT
 
+from os import read
 import time
 
+
+# NameError, TypeError, ZeroDivisionError, IOError, IndexError, ValueError, KeyboardInterrupt
+
 """
-NameError, TypeError, ZeroDivisionError, IOError, IndexError, ValueError, KeyboardInterrupt
 
 try:
     birtakım kodlar
@@ -152,3 +155,50 @@ if __name__ == '_main_':
         #f.close() finnallyde f.close eklemek gerekir
 
 """
+
+# ATTRIBUTE ERROR
+"""
+my_list=['ahmet', 24]
+my_list.appen(['mustafa', 34])
+print(my_list) #AttributeError:
+"""
+
+
+"""
+friends = ['ahmet', 'mehmet', 'ali', 'hasan', 'kamil']
+
+def select_best(friend):
+    if type(friend) is not str:
+        raise TypeError('string olmak zorunda')
+    if friend not in friends:
+        raise ValueError('isim listede yok')
+    print(f'en iyi arkadasim {friend}')
+
+select_best('veli') #isim listede yok
+"""
+
+"""
+# kendi hata clasimizi kendimiz olusturduk
+class MyCustomTypeError(TypeError):
+    def __init__(self, message, code):
+        super().__init__(f'Hata Kodu: {code} : {message}')
+        self.code = code
+
+
+friends = ['ahmet', 'mehmet', 'ali', 'hasan', 'kamil']
+
+def select_best(friend):
+    if type(friend) is not str:
+        raise MyCustomTypeError('string olmak zorunda', 700)
+    if friend not in friends:
+        raise ValueError('isim listede yok')
+    print(f'en iyi arkadasim {friend}')
+
+select_best('veli') #isim listede yok
+"""
+
+try:
+    with open('data.txt', 'r') as f:
+        content = f,read()
+except FileNotFoundError:
+    print('dosya bulunamadi')
