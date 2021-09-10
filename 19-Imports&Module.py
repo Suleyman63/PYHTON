@@ -11,8 +11,6 @@ import math
 
 import platform
 
-import testmodul 
-
 
 #********************************* Random ************************************
 

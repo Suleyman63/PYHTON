@@ -1,47 +1,38 @@
+import math
 
-#prime
-def is_prime(x):
+import sys
+
+import datetime
+
+
+
+def is_prime(zahl):
     try:
-        if x < 2:
-            return False
-        else:
-            if x == 2:
-                return True
-            else:
-                for i in range(2, x):
-                    if x % i == 0:
-                        return False
+        if zahl == 2:
             return True
+        if zahl % 2 == 0 or zahl <= 1:
+            return False
     except:
-        print('except prime')
+        return 'Except'
 
 
-
-#collatz
 def is_collatz(number):
     try:
-        if number % 2 == 0: 
-            return number // 2
-
-        elif number % 2 == 1: 
-            return number * 3 + 1
+        if number % 2 == 0:       
+            return result = number // 2
+        elif number % 2 == 1:      
+            return result = 3 * number + 1
     except:
-        print('excep collatz')
+        return 'Except'
 
 
-
-# schaltjahr
-def is_Schaltjahr(jahr):
+def is_schaltjahr(jahr):
     try:
-        if jahr % 400 == 0:
+        if jahr % 4 == 0 and jahr % 400 == 0:
             return True
-        elif jahr % 100 == 0:
-            return True
-        elif jahr % 4 == 0:
+        elif jahr % 4 == 0 and jahr % 100 != 0:
             return True
         else:
             return False
     except:
-        print('except schaltjahr')
-
-
+        return 'Except'

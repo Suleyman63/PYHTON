@@ -1,10 +1,10 @@
 import csv
 
 #reader
-with open('data.csv', 'r') as file:
-    reader = csv.reader(file)
-    for row in reader:
-        print(row)
+#with open('data.csv', 'r') as file:
+ #   reader = csv.reader(file)
+  #  for row in reader:
+   #     print(row)
 
 """
 #writer
@@ -20,7 +20,9 @@ with open('data.csv', 'w', newline='') as file:
 
 
 try:
-    with open('data.txt', 'r') as f:
-        content = f,read()
+    with open('data.csv', 'r') as f:
+        content = csv.reader(f)
+        for x in content:
+             print(x)
 except FileNotFoundError:
-    print('dosya bulunamadi')
+        print('dosya bulunamadi')

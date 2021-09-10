@@ -14,7 +14,7 @@ person = [
   }]
 
 try:
-   with open("guru99.txt", "w") as f:
+   with open("hotel.txt", "w") as f:
     json.dump(person, f)
 except IOError:
     print("except")
