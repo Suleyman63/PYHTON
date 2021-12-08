@@ -1,11 +1,11 @@
 import sqlite3
 
 
-#connection = sqlite3.connect('friend.db')
-#cursor = connection.cursor()
+connection = sqlite3.connect('friend.db')
+cursor = connection.cursor()
 
 # veri tabani olusturmak icin kullandik
-#cursor.execute('CREATE TABLE friends(first_name TEXT, last_name TEXT, age INTEGER)')
+cursor.execute('CREATE TABLE friends(first_name TEXT, last_name TEXT, age INTEGER)')
 
 # bilgi girisi yapiyoruz
 #cursor.execute("INSERT INTO friends VALUES('veli', 'yildiz', 43)")
@@ -14,9 +14,9 @@ import sqlite3
 #cursor.execute("SELECT * FROM friends WHERE first_name = 'mahmut'")
 
 # veri girisi icin input olusturduk
-#first_name = input('first name giriniz')
-#last_name = input('last name giriniz')
-#age = int(input('yas giriniz'))
+first_name = input('first name giriniz')
+last_name = input('last name giriniz')
+age = int(input('yas giriniz'))
 
 
 
@@ -24,7 +24,7 @@ import sqlite3
 #cursor.execute(f"INSERT INTO friends VALUES('{first_name}', '{last_name}', {age})")
 
 
-#cursor.execute(f"INSERT INTO friends VALUES(?, ?, ?)", (first_name, last_name, age))
+cursor.execute(f"INSERT INTO friends VALUES(?, ?, ?)", (first_name, last_name, age))
 
 
 #dictioniray yontemi ile veri girisi
@@ -53,8 +53,8 @@ import sqlite3
 
 ###########################################################################################################################################
 
-connection = sqlite3.connect('users.db')
-cursor = connection.cursor()
+#connection = sqlite3.connect('users.db')
+#cursor = connection.cursor()
 
 """
 # txt dosyasindaki verileri veri tabanina ekledik
@@ -72,20 +72,20 @@ with open('friends.txt', 'r') as f:
 
 
 # username ve password sisteme ekledik
-username = input('username')
-password = input('password')
+#username = input('username')
+#password = input('password')
 
 #cursor.execute(f"INSERT INTO users (user, pass) VALUES ('{username}', '{password}')")
 
 
 
 # sifre ve username kontrolu yaptik
-cursor.execute(f"SELECT * FROM users WHERE user ='{username}' AND pass='{password}' ")
+#cursor.execute(f"SELECT * FROM users WHERE user ='{username}' AND pass='{password}' ")
 
-if(cursor.fetchone()):
-    print('giris basarili')
-else:
-    print('giris basarisiz')
+#if(cursor.fetchone()):
+ #   print('giris basarili')
+#else:
+ #   print('giris basarisiz')
 
 
 
